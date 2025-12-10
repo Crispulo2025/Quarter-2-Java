@@ -4,18 +4,21 @@ public class PasswordCheck {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
 
-        // Stored password
-        String storedPassword = "Secret123";
+        // Predefined password and account status
+        String correctPassword = "Pass123";  // example password
+        boolean accountActive = true;        // account status
 
-        // Ask user to enter password
+        // Ask user for password
         System.out.print("Enter your password: ");
         String enteredPassword = input.nextLine();
 
-        // Compare passwords
-        if (enteredPassword.equals(storedPassword)) {
-            System.out.println("Password is correct. Access granted!");
+        // Check if password is correct and account is active
+        if (enteredPassword.equals(correctPassword) && accountActive) {
+            System.out.println("Access granted. Welcome!");
         } else {
-            System.out.println("Password is incorrect. Access denied!");
+            System.out.println("Access denied. Incorrect password or inactive account.");
         }
+
+        input.close();
     }
 }
