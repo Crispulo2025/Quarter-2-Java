@@ -4,14 +4,17 @@ public class LeapYearCheck {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
 
+        // Ask user for a year
         System.out.print("Enter a year: ");
         int year = input.nextInt();
 
-        // Check if the year is divisible by 4
-        if (year % 4 == 0) {
-            System.out.println(year + " is a leap year candidate.");
+        // Check leap year condition
+        if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0)) {
+            System.out.println(year + " is a LEAP YEAR.");
         } else {
-            System.out.println(year + " is NOT a leap year candidate.");
+            System.out.println(year + " is NOT a leap year.");
         }
+
+        input.close();
     }
 }
