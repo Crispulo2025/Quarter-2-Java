@@ -1,0 +1,48 @@
+FUNCTION MergeSort(array A)
+    IF length of A <= 1 THEN
+        RETURN A   // Base case: already sorted
+    END IF
+
+    // Step 1: Split the array
+    mid = length of A / 2
+    leftHalf = A[0 ... mid-1]
+    rightHalf = A[mid ... end]
+
+    // Step 2: Recursively sort both halves
+    sortedLeft = MergeSort(leftHalf)
+    sortedRight = MergeSort(rightHalf)
+
+    // Step 3: Merge the sorted halves
+    RETURN Merge(sortedLeft, sortedRight)
+END FUNCTION
+
+FUNCTION Merge(leftArray, rightArray)
+    result = empty array
+    i = 0  // index for leftArray
+    j = 0  // index for rightArray
+
+    // Compare elements and merge
+    WHILE i < length of leftArray AND j < length of rightArray DO
+        IF leftArray[i] <= rightArray[j] THEN
+            append leftArray[i] to result
+            i = i + 1
+        ELSE
+            append rightArray[j] to result
+            j = j + 1
+        END IF
+    END WHILE
+
+    // Copy remaining elements from leftArray
+    WHILE i < length of leftArray DO
+        append leftArray[i] to result
+        i = i + 1
+    END WHILE
+
+    // Copy remaining elements from rightArray
+    WHILE j < length of rightArray DO
+        append rightArray[j] to result
+        j = j + 1
+    END WHILE
+
+    RETURN result
+END FUNCTION
