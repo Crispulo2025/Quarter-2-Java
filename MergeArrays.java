@@ -1,36 +1,26 @@
 import java.util.Arrays;
 
 public class MergeArrays {
+
     public static void main(String[] args) {
-        // Initialize two 2x2 arrays
-        int[][] array1 = {
-            {1, 2},
-            {3, 4}
-        };
+        // Initialize two arrays
+        int[] array1 = {1, 3, 5, 7};
+        int[] array2 = {2, 4, 6, 8};
 
-        int[][] array2 = {
-            {5, 6},
-            {7, 8}
-        };
+        // Create a new array to hold the merged result
+        int[] mergedArray = new int[array1.length + array2.length];
 
-        // Create a new 2x4 array to hold merged data
-        int[][] mergedArray = new int[2][4];
+        // Copy elements of array1 into mergedArray
+        for (int i = 0; i < array1.length; i++) {
+            mergedArray[i] = array1[i];
+        }
 
-        // Merge arrays row by row
-        for (int i = 0; i < 2; i++) {
-            // Copy elements from first array
-            mergedArray[i][0] = array1[i][0];
-            mergedArray[i][1] = array1[i][1];
-
-            // Copy elements from second array
-            mergedArray[i][2] = array2[i][0];
-            mergedArray[i][3] = array2[i][1];
+        // Copy elements of array2 into mergedArray
+        for (int i = 0; i < array2.length; i++) {
+            mergedArray[array1.length + i] = array2[i];
         }
 
         // Display the merged array
-        System.out.println("Merged 2x4 Array:");
-        for (int i = 0; i < mergedArray.length; i++) {
-            System.out.println(Arrays.toString(mergedArray[i]));
-        }
+        System.out.println("Merged array: " + Arrays.toString(mergedArray));
     }
 }
