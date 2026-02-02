@@ -2,6 +2,7 @@ import java.util.Scanner;
 
 public class PasswordCheck {
     public static void main(String[] args) {
+
         Scanner scanner = new Scanner(System.in);
         String password;
         String correctPassword = "java123";
@@ -12,7 +13,5 @@ public class PasswordCheck {
         } while (!password.equals(correctPassword));
 
         System.out.println("Access granted!");
-
-        scanner.close();
     }
 }
