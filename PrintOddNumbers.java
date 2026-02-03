@@ -1,11 +1,13 @@
 public class PrintOddNumbers {
     public static void main(String[] args) {
 
-        for (int i = 1; i <= 15; i++) {
-            if (i % 2 == 0) {
-                continue;  // Skip even numbers
+        System.out.println("Odd numbers from 1 to 100:");
+
+        // For loop from 1 to 100
+        for (int i = 1; i <= 100; i++) {
+            if (i % 2 != 0) {   // Check if number is odd
+                System.out.print(i + " ");
             }
-            System.out.println(i);
         }
     }
 }
