@@ -5,19 +5,19 @@ public class TotalCostCalculator {
 
         Scanner scanner = new Scanner(System.in);
 
-        // Read number of items
-        System.out.print("Enter the number of items: ");
-        int numberOfItems = scanner.nextInt();
-
-        // Read price per item
-        System.out.print("Enter the price per item: ");
+        // Ask for price of the product
+        System.out.print("Enter the price of the product: ");
         double price = scanner.nextDouble();
 
-        // Calculate total cost
-        double totalCost = numberOfItems * price;
+        // Ask for quantity
+        System.out.print("Enter the quantity: ");
+        int quantity = scanner.nextInt();
 
-        // Display the result
-        System.out.println("The total cost is: $" + totalCost);
+        // Compute total cost
+        double total = price * quantity;
+
+        // Print total cost formatted to 2 decimal places
+        System.out.printf("Total cost: %.2f%n", total);
 
         scanner.close();
     }
