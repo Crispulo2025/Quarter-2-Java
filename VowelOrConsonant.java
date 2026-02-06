@@ -5,21 +5,20 @@ public class VowelOrConsonant {
 
         Scanner scanner = new Scanner(System.in);
 
-        // Ask the user for a character
-        System.out.print("Enter a letter: ");
+        // Ask the user to enter a single character
+        System.out.print("Enter a single character: ");
         char ch = scanner.next().charAt(0);
 
-        // Convert to lowercase for easier comparison
-        ch = Character.toLowerCase(ch);
+        // Convert to lowercase to simplify checking
+        char lowerCh = Character.toLowerCase(ch);
 
-        // Check if vowel or consonant
-        if (ch == 'a' || ch == 'e' || ch == 'i' || 
-            ch == 'o' || ch == 'u') {
-            System.out.println("Vowel");
-        } else if (ch >= 'a' && ch <= 'z') {
-            System.out.println("Consonant");
+        // Check if the character is a vowel or consonant
+        if (lowerCh == 'a' || lowerCh == 'e' || lowerCh == 'i' || lowerCh == 'o' || lowerCh == 'u') {
+            System.out.println(ch + " is a vowel.");
+        } else if (Character.isLetter(lowerCh)) {
+            System.out.println(ch + " is a consonant.");
         } else {
-            System.out.println("Invalid input");
+            System.out.println(ch + " is not an alphabet letter.");
         }
 
         scanner.close();
