@@ -1,13 +1,24 @@
+import java.util.Scanner;
+
 public class RectangleArea {
     public static void main(String[] args) {
-        // Declare the length and width of the rectangle
-        double length = 12.5;
-        double width = 8.0;
 
-        // Calculate the area
-        double area = length * width;
+        Scanner scanner = new Scanner(System.in);
 
-        // Display the result
-        System.out.println("The area of the rectangle with length " + length + " and width " + width + " is " + area);
+        // Ask for width
+        System.out.print("Enter the width of the rectangle: ");
+        double width = scanner.nextDouble();
+
+        // Ask for height
+        System.out.print("Enter the height of the rectangle: ");
+        double height = scanner.nextDouble();
+
+        // Calculate area
+        double area = width * height;
+
+        // Print the area formatted to 2 decimal places
+        System.out.printf("The area of the rectangle is: %.2f%n", area);
+
+        scanner.close();
     }
 }
